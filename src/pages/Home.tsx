@@ -1,12 +1,25 @@
-import { Link } from "react-router-dom";
-import MetaData from "../components/MetaData";
+// api
+import { useGetPopularMovies } from "@/api/movies/popular-query";
+
+// components
+import MetaData from "@/components/MetaData";
+import Popular from "@/components/Movies/Popular";
 
 const Home = () => {
+    const { data, isLoading, isError } = useGetPopularMovies();
+
+    if (isLoading) return <p>Loading...</p>;
+
+    if (isError) return null;
+
+    const popularMovies = (data?.pages || []).flatMap((page) => page.results);
+    console.log("popular", popularMovies);
+
     return (
         <div>
             <MetaData title={"Home"} />
-            Home
-            <Link to="/page">Page</Link>
+
+            <Popular popularMovies={popularMovies} />
         </div>
     );
 };

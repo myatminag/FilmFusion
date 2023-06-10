@@ -1,8 +1,9 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
 // components
 import SectionHeading from "../Common/SectionHeading";
+import MovieCard from "../Common/MovieCard";
 
 interface Props {
     popularMovies: {
@@ -28,17 +29,21 @@ const Popular = ({ popularMovies }: Props) => {
         <div>
             <SectionHeading heading="Popular" viewAll="View More" />
 
-            <div>
+            <Swiper
+                slidesPerView={"auto"}
+                spaceBetween={10}
+                className="mySwiper swiper-card"
+            >
                 {popularMovies?.map((popular) => (
-                    <div key={popular.id}>
-                        <LazyLoadImage
-                            src={`https://image.tmdb.org/t/p/w500${popular.poster_path}`}
-                            alt={popular.original_title}
-                            effect="blur"
-                        />
-                    </div>
+                    <SwiperSlide
+                        className="my-2"
+                        style={{ width: "auto" }}
+                        key={popular.id}
+                    >
+                        <MovieCard movieData={popular} />
+                    </SwiperSlide>
                 ))}
-            </div>
+            </Swiper>
         </div>
     );
 };

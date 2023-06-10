@@ -10,7 +10,7 @@ const SectionHeading = ({ heading, viewAll, clickViewMore }: Props) => {
             onClick={clickViewMore}
             className="flex items-center justify-between w-full"
         >
-            <p className="text-primary-white">{heading}</p>
+            <p className="text-primary-white text-xl">{heading}</p>
             <div>
                 <p className="text-primary-white">{viewAll}</p>
             </div>

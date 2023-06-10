@@ -11,7 +11,7 @@ const AppLayout = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");
 
     return (
-        <main className="px-4">
+        <main className="px-4 lg:px-[10rem]">
             {isMobile ? <NavigationMobile /> : <NavigationWeb />}
             <section className="">
                 <Outlet />

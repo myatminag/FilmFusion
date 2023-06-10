@@ -5,3 +5,7 @@
 body {
     background-color: #0d1b2a;
 }
+
+.swiper-card .swiper-slide {
+    height: auto !important;
+}

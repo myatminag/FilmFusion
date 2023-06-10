@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-import MetaData from "../components/metadata";
+import MetaData from "../components/MetaData";
 
 const Page = () => {
     return (

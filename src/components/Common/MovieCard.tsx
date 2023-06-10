@@ -23,7 +23,7 @@ interface Props {
 
 const MovieCard = ({ movieData }: Props) => {
     return (
-        <div className="rounded-md border border-white w-[200px] h-full flex flex-col relative">
+        <div className="rounded-md border border-white flex flex-col relative">
             <LazyLoadImage
                 src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
                 alt={movieData.original_title}

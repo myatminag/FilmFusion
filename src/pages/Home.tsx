@@ -13,7 +13,6 @@ const Home = () => {
     if (isError) return null;
 
     const popularMovies = (data?.pages || []).flatMap((page) => page.results);
-    console.log("popular", popularMovies);
 
     return (
         <div>

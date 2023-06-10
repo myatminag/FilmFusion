@@ -27,7 +27,11 @@ interface Props {
 const Popular = ({ popularMovies }: Props) => {
     return (
         <div>
-            <SectionHeading heading="Popular" viewAll="View More" />
+            <SectionHeading
+                heading="Popular"
+                viewAll="View More"
+                clickViewMore="/popular"
+            />
 
             <Swiper
                 slidesPerView={"auto"}
@@ -36,11 +40,10 @@ const Popular = ({ popularMovies }: Props) => {
             >
                 {popularMovies?.map((popular) => (
                     <SwiperSlide
-                        className="my-2"
+                        className="my-2 !w-52"
                         style={{ width: "auto" }}
-                        key={popular.id}
                     >
-                        <MovieCard movieData={popular} />
+                        <MovieCard key={popular.id} movieData={popular} />
                     </SwiperSlide>
                 ))}
             </Swiper>

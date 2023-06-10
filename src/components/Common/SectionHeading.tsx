@@ -1,19 +1,18 @@
+import { Link } from "react-router-dom";
+
 interface Props {
     heading: string;
     viewAll: string;
-    clickViewMore: () => void;
+    clickViewMore: string;
 }
 
 const SectionHeading = ({ heading, viewAll, clickViewMore }: Props) => {
     return (
-        <div
-            onClick={clickViewMore}
-            className="flex items-center justify-between w-full"
-        >
+        <div className="flex items-center justify-between w-full">
             <p className="text-primary-white text-xl">{heading}</p>
-            <div>
+            <Link to={clickViewMore}>
                 <p className="text-primary-white">{viewAll}</p>
-            </div>
+            </Link>
         </div>
     );
 };

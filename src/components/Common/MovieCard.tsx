@@ -24,12 +24,14 @@ interface Props {
 const MovieCard = ({ movieData }: Props) => {
     return (
         <div className="rounded-md border border-white flex flex-col relative">
-            <LazyLoadImage
-                src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
-                alt={movieData.original_title}
-                effect="blur"
-                className="h-[250px] w-full object-cover rounded-t-md"
-            />
+            <div className="w-full h-[180px] overflow-hidden">
+                <LazyLoadImage
+                    src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
+                    alt={movieData.original_title}
+                    effect="blur"
+                    className="rounded-md w-full h-full object-fill"
+                />
+            </div>
 
             <p className="px-2 line-clamp-2 font-semibold text-primary-white">
                 {movieData.title}

@@ -33,9 +33,9 @@ const Popular = () => {
 
     return (
         <div className="mb-10">
-            <p className="text-primary-white">Popular</p>
+            <p className="text-primary-white text-xl">Popular</p>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
                 {popularMovies?.map((popular) => (
                     <MovieCard key={popular.id} movieData={popular} />
                 ))}

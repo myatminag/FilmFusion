@@ -4,8 +4,8 @@ import { Outlet } from "react-router-dom";
 import useMediaQuery from "../hooks/useMediaQuery";
 
 // components
-import NavigationMobile from "./navigation/mobile/navigation.mobile";
-import NavigationWeb from "./navigation/web/navigation.web";
+import NavigationMobile from "./Navigation/NavigationMobile";
+import NavigationWeb from "./Navigation/NavigationWeb";
 
 const AppLayout = () => {
     const isMobile = useMediaQuery("(max-width: 768px)");

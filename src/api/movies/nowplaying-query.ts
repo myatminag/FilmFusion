@@ -1,7 +1,11 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import apiClient from "../apiClient";
 
-type PopularMovieResponse = {
+type NowPlayingResponse = {
+    dates: {
+        maximum: string;
+        minimum: string;
+    };
     page: number;
     results: {
         adult: boolean;
@@ -23,12 +27,12 @@ type PopularMovieResponse = {
     total_results: number;
 };
 
-export const useGetPopularMovies = <TData = PopularMovieResponse>() => {
-    return useInfiniteQuery<PopularMovieResponse, unknown, TData>({
-        queryKey: ["popular"],
+export const useGetNowPlayingMovies = <TData = NowPlayingResponse>() => {
+    return useInfiniteQuery<NowPlayingResponse, unknown, TData>({
+        queryKey: ["now_playing"],
         queryFn: async ({ pageParam = 1 }) => {
             return apiClient
-                .get("/movie/popular", {
+                .get("movie/now_playing", {
                     params: {
                         page: pageParam,
                     },

@@ -40,7 +40,7 @@ const Popular = ({ popularMovies }: Props) => {
             >
                 {popularMovies?.map((popular) => (
                     <SwiperSlide
-                        className="my-2 !w-52"
+                        className="my-2 !w-44"
                         style={{ width: "auto" }}
                     >
                         <MovieCard key={popular.id} movieData={popular} />

@@ -40,16 +40,18 @@ const MovieCard = ({ movieData }: Props) => {
                 />
             </div>
 
-            <p className="px-2 line-clamp-2 font-semibold text-primary-white">
+            <p className="px-2 line-clamp-2 text-sm font-semibold text-primary-white">
                 {movieData.title}
             </p>
             <div className="px-2 pb-2 mt-auto flex items-center gap-x-2">
-                <img src={Rating} alt="rating" />
-                <p className="text-primary-white text-sm font-light">
-                    {movieData.vote_average}
-                </p>
-                <p className="text-primary-white">|</p>
-                <p className="text-primary-white text-sm font-light">
+                <div className="flex items-center gap-x-1">
+                    <img src={Rating} alt="rating" />
+                    <p className="text-primary-white text-xs font-light">
+                        {movieData.vote_average}
+                    </p>
+                </div>
+                <p className="text-primary-white text-xs">|</p>
+                <p className="text-primary-white text-xs font-light">
                     {format(new Date(movieData.release_date), "dd, MMM, yyyy")}
                 </p>
             </div>

@@ -15,14 +15,14 @@ export default {
             },
             textColor: {
                 "primary-white": "#F8F9FA",
-                "primary-blue": "#778DA9",
+                "primary-blue": "#292738",
             },
             colors: {
+                "primary-bg-blue": "#1a1927",
                 "rich-black": "#0D1B2A",
                 "oxford-blue": "#1B263B",
                 "yinmin-blue": "#415A77",
                 "sliverlake-blue": "#778DA9",
-                platinum: "#E0E1DD",
             },
         },
     },

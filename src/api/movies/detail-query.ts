@@ -53,7 +53,7 @@ export const useGetMovieDetail = <TData = movieDetailResposne>(
     movieId: string | undefined
 ) => {
     return useQuery<movieDetailResposne, unknown, TData>({
-        queryKey: ["movie detail", movieId],
+        queryKey: ["movie-detail", movieId],
         queryFn: async () => {
             return apiClient.get(`movie/${movieId}`).then((res) => res.data);
         },

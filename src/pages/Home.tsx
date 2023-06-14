@@ -3,7 +3,6 @@ import { useGetPopularMovies } from "@/api/movies/popular-query";
 import { useGetNowPlayingMovies } from "@/api/movies/nowplaying-query";
 
 // components
-import MetaData from "@/components/MetaData";
 import Popular from "@/components/Movies/Popular";
 import NowPlaying from "@/components/Movies/NowPlaying";
 
@@ -18,10 +17,6 @@ const Home = () => {
     const isError =
         popularMoviesResult.isError || nowPlayingMoviesResult.isError;
 
-    if (isLoading) return <p>Loading...</p>;
-
-    if (isError) return null;
-
     const popularMovies = (popularMoviesResult?.data?.pages || []).flatMap(
         (page) => page.results
     );
@@ -29,10 +24,12 @@ const Home = () => {
         nowPlayingMoviesResult?.data?.pages || []
     ).flatMap((page) => page.results);
 
+    if (isLoading) return <p>Loading...</p>;
+
+    if (isError) return null;
+
     return (
         <div>
-            <MetaData title={"Home"} />
-
             <Popular popularMovies={popularMovies} />
 
             <NowPlaying nowPlayingMovies={nowPlayingMovies} />

@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useGetPopularMovies } from "@/api/movies/popular-query";
 
 // components
-import MovieCard from "@/components/Common/MovieCard";
+import MovieCard from "@/components/common/MovieCard";
 
 const Popular = () => {
     const { ref, inView } = useInView();

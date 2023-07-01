@@ -3,8 +3,8 @@ import { useGetPopularMovies } from "@/api/movies/popular-query";
 import { useGetNowPlayingMovies } from "@/api/movies/nowplaying-query";
 
 // components
-import Popular from "@/components/Movies/Popular";
-import NowPlaying from "@/components/Movies/NowPlaying";
+import Popular from "@/components/movies/Popular";
+import NowPlaying from "@/components/movies/NowPlaying";
 
 const Home = () => {
     const popularMoviesResult = useGetPopularMovies();

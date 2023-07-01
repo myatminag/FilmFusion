@@ -2,8 +2,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 // components
-import SectionHeading from "../Common/SectionHeading";
-import MovieCard from "../Common/MovieCard";
+import SectionHeading from "../common/SectionHeading";
+import MovieCard from "../common/MovieCard";
 
 interface Props {
     nowPlayingMovies: {

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
+import Mansory from "react-masonry-css";
 
 // api
 import { useGetPopularMovies } from "@/api/movies/popular-query";
@@ -35,15 +36,26 @@ const Popular = () => {
         <div className="mb-10">
             <p className="text-primary-white text-xl">Popular</p>
 
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-3">
+            <Mansory
+                breakpointCols={{
+                    default: 6,
+                    1100: 5,
+                    700: 3,
+                    500: 2,
+                }}
+                className="my-masonry-grid"
+                columnClassName="my-masonry-grid_column"
+            >
                 {popularMovies?.map((popular) => (
                     <MovieCard key={popular.id} movieData={popular} />
                 ))}
-            </div>
+            </Mansory>
 
             <div ref={ref}>
                 {hasNextPage ? (
-                    isFetchingNextPage && <p>Loading...</p>
+                    isFetchingNextPage && (
+                        <p className="text-center text-white">Loading...</p>
+                    )
                 ) : (
                     <p className="text-white text-center mt-3">
                         No More Results

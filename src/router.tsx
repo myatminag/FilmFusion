@@ -7,7 +7,7 @@ import AppLayout from "./components/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/home/Home";
 import Page from "./pages/Page";
-import Popular from "./pages/Popular";
+import Popular from "./pages/popular/Popular";
 import Details from "./pages/Details";
 
 const router = createBrowserRouter([

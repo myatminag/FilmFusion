@@ -24,6 +24,15 @@ export default {
                 "yinmin-blue": "#415A77",
                 "sliverlake-blue": "#778DA9",
             },
+            animation: {
+                skeleton: "skeleton 1s infinite steps(10, end) alternate",
+            },
+            keyframes: {
+                skeleton: {
+                    "0%": { opacity: 0.25 },
+                    "100%": { opacity: 1 },
+                },
+            },
         },
     },
     plugins: [],

@@ -13,7 +13,7 @@ const AppLayout = () => {
     return (
         <main className="px-4 lg:px-[10rem]">
             {isMobile ? <NavigationMobile /> : <NavigationWeb />}
-            <section className="">
+            <section>
                 <Outlet />
             </section>
         </main>

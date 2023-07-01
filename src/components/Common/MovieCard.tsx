@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { format } from "date-fns";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -26,36 +26,41 @@ interface Props {
 }
 
 const MovieCard = ({ movieData }: Props) => {
-    return (
-        <Link
-            to={`/detail/${movieData.id}`}
-            className="rounded-md bg-[#292738] flex flex-col h-full relative"
-        >
-            <div className="w-full h-[200px] overflow-hidden mb-1">
-                <LazyLoadImage
-                    src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
-                    alt={movieData.original_title}
-                    effect="blur"
-                    className="rounded-md w-full h-full object-fill"
-                />
-            </div>
+    const navigate = useNavigate();
 
-            <p className="px-2 line-clamp-2 text-sm font-semibold text-primary-white">
-                {movieData.title}
-            </p>
-            <div className="px-2 pb-2 mt-auto flex items-center gap-x-2">
-                <div className="flex items-center gap-x-1">
-                    <img src={Rating} alt="rating" />
+    return (
+        <div
+            onClick={() => navigate(`/detail/${movieData.id}`)}
+            className="rounded-md bg-[#292738] w-full relative"
+        >
+            <LazyLoadImage
+                src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
+                alt={movieData.original_title}
+                effect="blur"
+                className="rounded-t-md w-full h-full object-fill"
+            />
+
+            <div className="px-2 pb-2">
+                <p className="line-clamp-2 text-sm font-semibold text-primary-white">
+                    {movieData.title}
+                </p>
+                <div className="flex items-center gap-x-2">
+                    <div className="flex items-center gap-x-1">
+                        <img src={Rating} alt="rating" />
+                        <p className="text-primary-white text-xs font-light">
+                            {movieData.vote_average}
+                        </p>
+                    </div>
+                    <p className="text-primary-white text-xs">|</p>
                     <p className="text-primary-white text-xs font-light">
-                        {movieData.vote_average}
+                        {format(
+                            new Date(movieData.release_date),
+                            "dd, MMM, yyyy"
+                        )}
                     </p>
                 </div>
-                <p className="text-primary-white text-xs">|</p>
-                <p className="text-primary-white text-xs font-light">
-                    {format(new Date(movieData.release_date), "dd, MMM, yyyy")}
-                </p>
             </div>
-        </Link>
+        </div>
     );
 };
 

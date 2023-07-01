@@ -1,5 +1,4 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import Mansory from "react-masonry-css";
 
 // components
 import SectionHeading from "../common/SectionHeading";
@@ -32,21 +31,6 @@ const Popular = ({ popularMovies }: Props) => {
                 viewAll="View More"
                 clickViewMore="/popular"
             />
-
-            <Swiper
-                slidesPerView={"auto"}
-                spaceBetween={10}
-                className="mySwiper swiper-card"
-            >
-                {popularMovies?.map((popular) => (
-                    <SwiperSlide
-                        className="my-2 !w-[176px]"
-                        style={{ width: "auto" }}
-                    >
-                        <MovieCard key={popular.id} movieData={popular} />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
         </div>
     );
 };

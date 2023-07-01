@@ -32,7 +32,7 @@ const Home = () => {
         <div>
             <Popular popularMovies={popularMovies} />
 
-            <NowPlaying nowPlayingMovies={nowPlayingMovies} />
+            {/* <NowPlaying nowPlayingMovies={nowPlayingMovies} /> */}
         </div>
     );
 };

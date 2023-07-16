@@ -31,16 +31,16 @@ const MovieCard = ({ movieData }: Props) => {
     return (
         <div
             onClick={() => navigate(`/detail/${movieData.id}`)}
-            className="rounded-md bg-[#292738] w-full relative"
+            className="rounded-md w-full h-[200px] relative"
         >
             <LazyLoadImage
                 src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
                 alt={movieData.original_title}
                 effect="blur"
-                className="rounded-t-md w-full h-full object-fill"
+                className="rounded-t-md w-full h-[230px] object-cover"
             />
 
-            <div className="px-2 pb-2">
+            <div className="px-2 pb-2 absolute bottom-0">
                 <p className="line-clamp-2 text-sm font-semibold text-primary-white">
                     {movieData.title}
                 </p>

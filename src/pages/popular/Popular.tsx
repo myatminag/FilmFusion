@@ -36,20 +36,9 @@ const Popular = () => {
         <div className="mb-10">
             <p className="text-primary-white text-xl">Popular</p>
 
-            <Mansory
-                breakpointCols={{
-                    default: 6,
-                    1100: 5,
-                    700: 3,
-                    500: 2,
-                }}
-                className="my-masonry-grid"
-                columnClassName="my-masonry-grid_column"
-            >
-                {popularMovies?.map((popular) => (
-                    <MovieCard key={popular.id} movieData={popular} />
-                ))}
-            </Mansory>
+            {popularMovies?.map((popular) => (
+                <MovieCard key={popular.id} movieData={popular} />
+            ))}
 
             <div ref={ref}>
                 {hasNextPage ? (

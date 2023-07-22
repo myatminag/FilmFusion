@@ -8,7 +8,6 @@ import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/home/Home";
 import Page from "./pages/Page";
 import Popular from "./pages/popular/Popular";
-import Details from "./pages/Details";
 
 const router = createBrowserRouter([
     {
@@ -16,9 +15,8 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             { path: "/", element: <Home /> },
-            { path: "/page", element: <Page /> },
-            { path: "/popular", element: <Popular /> },
-            { path: "/detail/:movieId", element: <Details /> },
+            { path: "page", element: <Page /> },
+            { path: "popular", element: <Popular /> },
         ],
     },
 ]);

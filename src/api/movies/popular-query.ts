@@ -23,8 +23,8 @@ type PopularMovieResponse = {
     total_results: number;
 };
 
-export const useGetPopularMovies = <TData = PopularMovieResponse>() => {
-    return useInfiniteQuery<PopularMovieResponse, unknown, TData>({
+export const useGetPopularMovies = () => {
+    return useInfiniteQuery<PopularMovieResponse>({
         queryKey: ["popular"],
         queryFn: async ({ pageParam = 1 }) => {
             return apiClient
@@ -39,6 +39,5 @@ export const useGetPopularMovies = <TData = PopularMovieResponse>() => {
             if (lastPage.page === 500) return undefined;
             return allPages.length + 1;
         },
-        keepPreviousData: true,
     });
 };

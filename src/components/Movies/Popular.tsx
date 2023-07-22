@@ -1,5 +1,3 @@
-import Mansory from "react-masonry-css";
-
 // components
 import SectionHeading from "../common/SectionHeading";
 import MovieCard from "../common/MovieCard";
@@ -31,6 +29,12 @@ const Popular = ({ popularMovies }: Props) => {
                 viewAll="View More"
                 clickViewMore="/popular"
             />
+
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-6">
+                {popularMovies?.map((data) => (
+                    <MovieCard movieData={data} />
+                ))}
+            </div>
         </div>
     );
 };

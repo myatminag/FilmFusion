@@ -7,7 +7,9 @@ import AppLayout from "./layouts/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
 import Home from "./pages/Home";
 import Movies from "./pages/Movies";
+import MoveDetails from "./pages/Movies/MoveDetails";
 import Series from "./pages/Series";
+import SeriesDetails from "./pages/Series/SeriesDetails";
 
 const router = createBrowserRouter([
     {
@@ -15,8 +17,20 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
         children: [
             { path: "/", element: <Home /> },
-            { path: "movies", element: <Movies /> },
-            { path: "series", element: <Series /> },
+            {
+                path: "movies",
+                children: [
+                    { element: <Movies />, index: true },
+                    { path: ":id", element: <MoveDetails /> },
+                ],
+            },
+            {
+                path: "series",
+                children: [
+                    { element: <Series />, index: true },
+                    { path: ":id", element: <SeriesDetails /> },
+                ],
+            },
         ],
     },
 ]);

@@ -49,10 +49,8 @@ type movieDetailResposne = {
     vote_count: number;
 };
 
-export const useGetMovieDetail = <TData = movieDetailResposne>(
-    movieId: string | undefined
-) => {
-    return useQuery<movieDetailResposne, unknown, TData>({
+export const useGetMovieDetail = (movieId: string | undefined) => {
+    return useQuery<movieDetailResposne>({
         queryKey: ["movie-detail", movieId],
         queryFn: async () => {
             return apiClient.get(`movie/${movieId}`).then((res) => res.data);

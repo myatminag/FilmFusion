@@ -27,8 +27,8 @@ type NowPlayingResponse = {
     total_results: number;
 };
 
-export const useGetNowPlayingMovies = <TData = NowPlayingResponse>() => {
-    return useInfiniteQuery<NowPlayingResponse, unknown, TData>({
+export const useGetNowPlayingMovies = () => {
+    return useInfiniteQuery<NowPlayingResponse>({
         queryKey: ["now_playing"],
         queryFn: async ({ pageParam = 1 }) => {
             return apiClient

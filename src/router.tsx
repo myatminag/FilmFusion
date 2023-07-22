@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 
 // components
-import AppLayout from "./components/AppLayout";
+import AppLayout from "./layouts/AppLayout";
 
 // pages
 import ErrorPage from "./pages/ErrorPage";
-import Home from "./pages/home/Home";
+import Home from "./pages/Home";
 import Movies from "./pages/Movies";
 import Series from "./pages/Series";
 

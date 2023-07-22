@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 // api
-import { useGetMovieDetail } from "@/api/movies/detail-query";
+import { useGetMovieDetail } from "@/api/movies/moveDetail.query";
 
 const Details = () => {
     const { movieId } = useParams();

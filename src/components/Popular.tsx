@@ -1,6 +1,6 @@
 // components
-import SectionHeading from "../common/SectionHeading";
-import MovieCard from "../common/MovieCard";
+import SectionHeading from "./Common/SectionHeading";
+import MovieCard from "./Common/MovieCard";
 
 interface Props {
     popularMovies: {
